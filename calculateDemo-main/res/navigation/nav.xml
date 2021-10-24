@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/titleFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.calculatedemol.TitleFragment"
+        android:label="欢迎"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_titleFragment_to_calFragment"
+            app:destination="@id/calFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calFragment"
+        android:name="com.example.calculatedemol.CalFragment"
+        android:label="计算"
+        tools:layout="@layout/fragment_cal">
+        <action
+            android:id="@+id/action_calFragment_to_failFragment"
+            app:destination="@id/failFragment" />
+        <action
+            android:id="@+id/action_calFragment_to_winFragment"
+            app:destination="@id/winFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/failFragment"
+        android:name="com.example.calculatedemol.FailFragment"
+        android:label="失败"
+        tools:layout="@layout/fragment_fail">
+        <action
+            android:id="@+id/action_failFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/winFragment"
+        android:name="com.example.calculatedemol.WinFragment"
+        android:label="胜利"
+        tools:layout="@layout/fragment_win">
+        <action
+            android:id="@+id/action_winFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
+</navigation>
